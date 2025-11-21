@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>WS Handler Echo</title></head>
+<body>
+<script>
+var ws=new WebSocket("ws://localhost:8082/ws/echo");
+ws.onopen=function(){ws.send("hello")};
+ws.onmessage=function(e){console.log(e.data)};
+</script>
+</body>
+</html>

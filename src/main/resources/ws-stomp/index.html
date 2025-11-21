@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>STOMP Chat</title></head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+<script>
+var sock=new SockJS('/ws');
+var client=Stomp.over(sock);
+client.connect({},function(){
+  client.subscribe('/topic/messages',function(msg){console.log(msg.body)});
+  client.send('/app/chat',{},'hello');
+});
+</script>
+</body>
+</html>

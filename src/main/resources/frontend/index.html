@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Call</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="row">
+      <label>当前用户ID</label>
+      <input id="userId" placeholder="例如 1001" />
+    </div>
+    <div class="row">
+      <label>对端用户ID</label>
+      <input id="peerId" placeholder="例如 1002" />
+    </div>
+    <div class="row">
+      <button id="connectBtn">连接信令</button>
+      <button id="disconnectBtn">断开</button>
+    </div>
+    <div class="row">
+      <button id="voiceCallBtn">发起语音通话</button>
+      <button id="videoCallBtn">发起视频通话</button>
+    </div>
+    <div class="row">
+      <button id="answerBtn">接听</button>
+      <button id="rejectBtn">拒绝</button>
+      <button id="hangupBtn">挂断</button>
+    </div>
+  </div>
+  <div class="media">
+    <video id="localVideo" autoplay muted playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
